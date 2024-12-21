@@ -49,6 +49,6 @@ $ npm run prettier      # beautify the unorganized code
 $ npm run prettier:fix  # prettier-fix your code
 ```
 
-### VIDEO INTRO: [(Click Here)](https://drive.google.com/file/d/1L5T5PhQeanlcMOR9wukxvBLw_Eppnp3U/view?usp=sharing)
+### VIDEO INTRO: [(Click Here)](https://drive.google.com/file/d/1yKYsxAImBhABVms2XjpswdwOEYCas__K/view?usp=sharing)
 
 ### API Documentation: [POSTMAN API DOCUMENTATION (Click Here)](https://www.postman.com/winter-capsule-905954/public-work-space/documentation/npqprg8/blogging-platform)
