@@ -33,7 +33,7 @@ JWT_ACCESS_SECRET=<access_secret>
 JWT_ACCESS_EXPIRES_IN=<expiry_time>
 ```
 
-> Create a database in MongoDB named car-store
+> Create a database in MongoDB named blogging-platform
 
 ## NPM SCRIPTS
 
