@@ -24,6 +24,7 @@ Here is the description of how I have set up my project environment, the technol
 > Create a .env file and adjust the following environment variables.
 
 ```bash
+# Please add these variables in your .env file
 NODE_ENV=development
 PORT=<application_port>
 DATABASE_URL=<database_url>
