@@ -1,21 +1,21 @@
 import { model, Schema } from 'mongoose';
-import { TBlog } from './blog.interface';
+import { TMessage } from './message.interface';
 
-const blogSchema = new Schema<TBlog>(
+const messageSchema = new Schema<TMessage>(
   {
-    title: {
+    name: {
       type: String,
       required: true,
     },
-    content: {
+    email: {
       type: String,
       required: true,
     },
-    image: {
+    subject: {
       type: String,
       required: true,
     },
-    category: {
+    message: {
       type: String,
       required: true,
     },
@@ -23,4 +23,4 @@ const blogSchema = new Schema<TBlog>(
   { timestamps: true },
 );
 
-export const Blog = model<TBlog>('Blog', blogSchema);
+export const Message = model<TMessage>('Message', messageSchema);

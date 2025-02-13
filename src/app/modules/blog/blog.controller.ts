@@ -4,7 +4,7 @@ import sendResponse from '../../utils/sendResponse';
 import { BlogServices } from './blog.service';
 
 const getAllBlogs = catchAsync(async (req, res) => {
-  const result = await BlogServices.getAllBlogs(req.query);
+  const result = await BlogServices.getAllBlogs();
 
   sendResponse(res, {
     statusCode: httpStatus.OK,
@@ -13,30 +13,30 @@ const getAllBlogs = catchAsync(async (req, res) => {
     data: result,
   });
 });
+const getSingleBlog = catchAsync(async (req, res) => {
+  const result = await BlogServices.getSingleBlog(req.params.id);
+
+  sendResponse(res, {
+    statusCode: httpStatus.OK,
+    success: true,
+    message: 'Blog fetched successfully!',
+    data: result,
+  });
+});
 
 const createBlog = catchAsync(async (req, res) => {
-  const blogPayload = { ...req.body, author: req.user.userId };
-
-  const result = await (await BlogServices.createBlog(blogPayload)).populate('author');
-
-  const filteredResponse = {
-    _id: result._id,
-    title: result.title,
-    content: result.content,
-    author: result.author,
-  };
+  const result = await BlogServices.createBlog(req.body);
 
   sendResponse(res, {
     statusCode: httpStatus.CREATED,
     success: true,
     message: 'Blog created successfully!',
-    data: filteredResponse,
+    data: result,
   });
 });
 
 const updateBlog = catchAsync(async (req, res) => {
-  const user = req.user as { userId: string; role: string };
-  const result = await BlogServices.updateBlog(req.params.id, user, req.body);
+  const result = await BlogServices.updateBlog(req.params.id, req.body);
 
   sendResponse(res, {
     statusCode: httpStatus.OK,
@@ -47,8 +47,7 @@ const updateBlog = catchAsync(async (req, res) => {
 });
 
 const deleteBlog = catchAsync(async (req, res) => {
-  const user = req.user as { userId: string; role: string };
-  await BlogServices.deleteBlog(req.params.id, user);
+  await BlogServices.deleteBlog(req.params.id);
 
   sendResponse(res, {
     statusCode: httpStatus.OK,
@@ -59,6 +58,7 @@ const deleteBlog = catchAsync(async (req, res) => {
 
 export const BlogControllers = {
   getAllBlogs,
+  getSingleBlog,
   createBlog,
   updateBlog,
   deleteBlog,

@@ -14,7 +14,7 @@ const app: Application = express();
 //parsers
 app.use(express.json());
 
-app.use(cors({ origin: ['http://localhost:5173'], credentials: true }));
+app.use(cors({ origin: 'http://localhost:3000', credentials: true }));
 
 // logging
 app.use(morgan('dev'));
@@ -23,7 +23,7 @@ app.use(morgan('dev'));
 app.use('/api', router);
 
 app.get('/', (req: Request, res: Response) => {
-  res.json({ message: 'Welcome to my blog application' });
+  res.json({ message: 'Welcome to my portfolio-blog application' });
 });
 
 app.use(globalErrorHandler);

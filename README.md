@@ -1,10 +1,10 @@
-# Assignment-3
+# Assignment-5
 
-This is my third assignment in the Programming Hero Next Level Web Development course platform. I am very excited to share and describe my project with you.
+This is my fifth assignment in the Programming Hero Next Level Web Development course platform. I am very excited to share and describe my project with you.
 
-This is a blogging platform management application that consists of two collections: One is the blog collection, another user collection. The first one involves creating, fetching, updating and deleting operations. The second one handles user registration and login management as well as manages the authentication workflow.
+This is a blogging and portfolio platform management application that consists of three collections: One is the blog collection, another project collection and the other message collection. The first and the second one involve creating, fetching, updating and deleting operations of blogs and projects. The third one handles sending and viewing user messages.
 
-Here is the description of how I have set up my project environment, the technologies I have used, how to run and inspect the project and last but not the least - Postman API Documentation:
+Here is the description of how I have set up my project environment, the technologies I have used, how to run and inspect the project.
 
 ## PROJECT SETUP
 
@@ -28,12 +28,9 @@ Here is the description of how I have set up my project environment, the technol
 NODE_ENV=development
 PORT=<application_port>
 DATABASE_URL=<database_url>
-BCRYPT_SALT_ROUNDS=<salt_rounds>
-JWT_ACCESS_SECRET=<access_secret>
-JWT_ACCESS_EXPIRES_IN=<expiry_time>
 ```
 
-> Create a database in MongoDB named blogging-platform
+> Create a database in MongoDB named portfolio-blog
 
 ## NPM SCRIPTS
 
@@ -48,7 +45,3 @@ $ npm run lint:fix      # fix whether there is any potential error
 $ npm run prettier      # beautify the unorganized code
 $ npm run prettier:fix  # prettier-fix your code
 ```
-
-### VIDEO INTRO: [(Click Here)](https://drive.google.com/file/d/1yKYsxAImBhABVms2XjpswdwOEYCas__K/view?usp=sharing)
-
-### API Documentation: [POSTMAN API DOCUMENTATION (Click Here)](https://www.postman.com/winter-capsule-905954/public-work-space/documentation/npqprg8/blogging-platform)
